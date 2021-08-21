@@ -2,7 +2,7 @@
     width: 70%;
     margin: 0 auto;
     box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
-    background-color: rgba($color-white, .5);
+    background-color: rgba($color-white, 0.5);
     border-radius: $border-radius-small;
     padding: 6rem;
     padding-left: 9rem;
@@ -24,12 +24,12 @@
     &__text {
         transform: skewX(10deg);
     }
-    
+
     &__image {
         height: 100%;
         transition: all 0.5s;
     }
-    
+
     &__caption {
         position: absolute;
         top: 50%;
@@ -43,17 +43,36 @@
         transition: all 0.5s;
         backface-visibility: hidden;
     }
-    
+
     &:hover &__caption {
         opacity: 1;
         transform: translate(-50%, -50%);
     }
-    
-    &:hover &__image{
+
+    &:hover &__image {
         transform: scale(1.4);
         filter: blur(2px) brightness(95%);
         backface-visibility: hidden;
     }
 
-    
+    @include respond(tab-port) {
+        width: 100%;
+        padding: 4rem;
+        padding-left: 7rem;
+    }
+
+    @include respond(phone) {
+        transform: skewX(0deg);
+        width: 100%;
+        padding: 4rem;
+        padding-left: 7rem;
+
+        &__text {
+            transform: skewX(0);
+        }
+
+        &__shape {
+            transform: translateX(-3rem) skewX(0);
+        }
+    }
 }

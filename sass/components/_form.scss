@@ -25,6 +25,10 @@
         &::placeholder {
             color: $color-gray-dark-2;
         }
+
+        @include respond(tab-port){
+            width: 100%;
+        }
     }
 
     &__group:not(:last-child) {
@@ -51,15 +55,21 @@
         &-group {
             width: 49%;
             display: inline-block;
+            
+            @include respond(tab-port){
+                width: 100%;
+                margin-bottom: 3rem;
+                
+            }
         }
-
+        
         &-label {
             font-size: $default-font-size;
             cursor: pointer;
             position: relative;
             padding-left: 5rem;
         }
-
+        
         &-button{
             height: 3rem;
             width: 3rem;
@@ -69,19 +79,20 @@
             position: absolute;
             left: 0;
             top: -.5rem;
-
-
+            
+           
+            
             &::after{
                 content: "";
                 display: block;
-                 height: 1rem;
-                 width: 1rem;
-                 border-radius: $border-radius-full;
-                 position: absolute;
-                 top: 50%;
-                 left: 50%;
-                 transform: translate(-50%, -50%);
-                 background-color: $color-primary;
+                height: 1rem;
+                width: 1rem;
+                border-radius: $border-radius-full;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: $color-primary;
                  opacity: 0;
                  transition: opacity .2s;
 
