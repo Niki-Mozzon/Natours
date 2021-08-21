@@ -275,7 +275,7 @@ body {
         .composition__photo--p2 {
           top: -1rem;
           transform: scale(1.3);
-          z-index: 100; } }
+          z-index: 6; } }
     .composition__photo--p3 {
       left: 15%;
       top: 15rem; }
@@ -292,9 +292,11 @@ body {
       z-index: 10; }
       @media (max-width: 56.25em) {
         .composition__photo:hover {
-          transform: scale(1.4) translateY(-0.5rem); } }
+          transform: scale(1.2) translateY(-0.5rem);
+          outline-offset: 1rem;
+          outline: 0.75rem solid #55c57a; } }
   .composition:hover .composition__photo:not(:hover) {
-    transform: scale(0.95); }
+    transform: scale(1.05); }
 
 .feature-box {
   background-color: rgba(255, 255, 255, 0.8);
@@ -603,11 +605,12 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.2);
   z-index: 100;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.5s; }
+  transition: all 0.5s;
+  backdrop-filter: blur(10px); }
   .popup__content {
     position: absolute;
     top: 50%;
@@ -621,7 +624,7 @@ body {
     overflow: hidden;
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.1);
-    transition: all .4s .2s; }
+    transition: all 0.4s 0.2s; }
   .popup__left {
     width: 33.33333%;
     display: table-cell; }
@@ -790,12 +793,15 @@ body {
 
 .header {
   height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero-small.jpg);
   position: relative;
   background-size: cover;
   background-position: top;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
+  @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
+    .header {
+      background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg); } }
   @media (max-width: 37.5em) {
     .header {
       clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%); } }
